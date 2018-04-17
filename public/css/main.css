@@ -1,0 +1,97 @@
+@charset "UTF-8";
+body {
+  font-family: "Shin Go Light JIS2004", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+.overlay, section.banner .banner-overlay, section.services .banner-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all .3s;
+  cursor: pointer;
+}
+.overlay:hover, section.banner .banner-overlay:hover, section.services .banner-overlay:hover {
+  opacity: 0;
+}
+
+.banner-img, section.banner .banner-img-1, section.banner .banner-img-2, section.services .services-img-1, section.services .services-img-2, section.services .services-img-3, section.services .services-img-4, section.services .services-img-5 {
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+.banner-img .banner-title, section.banner .banner-img-1 .banner-title, section.banner .banner-img-2 .banner-title, section.services .services-img-1 .banner-title, section.services .services-img-2 .banner-title, section.services .services-img-3 .banner-title, section.services .services-img-4 .banner-title, section.services .services-img-5 .banner-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 1px;
+}
+
+header {
+  height: auto;
+}
+header a.navbar-brand {
+  width: 248px;
+  height: 32px;
+}
+header a.navbar-brand img {
+  width: inherit;
+}
+header .navbar-collapse ul.navbar-nav li {
+  border-right: 1px solid #ddd;
+}
+header .navbar-collapse ul.navbar-nav li:last-child {
+  border-right: none;
+}
+
+section#main section.video-intro {
+  position: relative;
+}
+section#main section.video-intro video {
+  width: 100%;
+  height: auto;
+}
+section#main section.video-intro .title-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: pink;
+  text-align: center;
+}
+
+section.banner .banner-img-1 {
+  background-image: url(../img/img_index_01.jpg);
+}
+section.banner .banner-img-2 {
+  background-image: url(../img/img_index_02.jpg);
+}
+
+section.services {
+  width: 100%;
+  background: #ddd;
+}
+section.services .services-title {
+  text-transform: uppercase;
+}
+section.services .services-img-1 {
+  background-image: url(../img/img_index_03.jpg);
+}
+section.services .services-img-2 {
+  background-image: url(../img/img_index_04.jpg);
+}
+section.services .services-img-3 {
+  background-image: url(../img/img_index_05.jpg);
+}
+section.services .services-img-4 {
+  background-image: url(../img/img_index_06.jpg);
+}
+section.services .services-img-5 {
+  background-image: url(../img/img_index_07.jpg);
+}
