@@ -1,10 +1,181 @@
 @charset "UTF-8";
-body {
-  font-family: "Shin Go Light JIS2004", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+.nice-select {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #fff;
+  border-radius: 5px;
+  border: solid 1px #e8e8e8;
+  box-sizing: border-box;
+  clear: both;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  height: 42px;
+  line-height: 40px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  width: auto;
+}
+.nice-select:hover {
+  border-color: #dbdbdb;
+}
+.nice-select:active, .nice-select.open, .nice-select:focus {
+  border-color: #999;
+}
+.nice-select:after {
+  border-bottom: 2px solid #999;
+  border-right: 2px solid #999;
+  content: '';
+  display: block;
+  height: 5px;
+  margin-top: -4px;
+  pointer-events: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform-origin: 66% 66%;
+  transform: rotate(45deg);
+  transition: all 0.15s ease-in-out;
+  width: 5px;
+}
+.nice-select.open:after {
+  transform: rotate(-135deg);
+}
+.nice-select.open .list {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) translateY(0);
+}
+.nice-select.disabled {
+  border-color: #ededed;
+  color: #999;
+  pointer-events: none;
+}
+.nice-select.disabled:after {
+  border-color: #cccccc;
+}
+.nice-select.wide {
+  width: 100%;
+}
+.nice-select.wide .list {
+  left: 0 !important;
+  right: 0 !important;
+}
+.nice-select.right {
+  float: right;
+}
+.nice-select.right .list {
+  left: auto;
+  right: 0;
+}
+.nice-select.small {
+  font-size: 12px;
+  height: 36px;
+  line-height: 34px;
+}
+.nice-select.small:after {
+  height: 4px;
+  width: 4px;
+}
+.nice-select.small .option {
+  line-height: 34px;
+  min-height: 34px;
+}
+.nice-select .list {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
+  box-sizing: border-box;
+  margin-top: 4px;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform-origin: 50% 0;
+  transform: scale(0.75) translateY(-21px);
+  transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+  z-index: 9;
+}
+.nice-select .list:hover .option:not(:hover) {
+  background-color: transparent !important;
+}
+.nice-select .option {
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 40px;
+  list-style: none;
+  min-height: 40px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 29px;
+  text-align: left;
+  transition: all 0.2s;
+}
+.nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+  background-color: #f6f6f6;
+}
+.nice-select .option.selected {
+  font-weight: bold;
+}
+.nice-select .option.disabled {
+  background-color: transparent;
+  color: #999;
+  cursor: default;
 }
 
-.overlay, section.banner .banner-overlay, section.services .banner-overlay {
-  background: rgba(0, 0, 0, 0.4);
+.no-csspointerevents .nice-select .list {
+  display: none;
+}
+.no-csspointerevents .nice-select.open .list {
+  display: block;
+}
+
+/*!
+ * Yamm!3 - Yet another megamenu for Bootstrap 3
+ * http://geedmo.github.com/yamm3
+ *
+ * @geedmo - Licensed under the MIT license
+ */
+.yamm .nav, .yamm .collapse, .yamm .dropup, .yamm .dropdown {
+  position: static;
+}
+.yamm .container {
+  position: relative;
+}
+.yamm .dropdown-menu {
+  left: auto;
+}
+.yamm .yamm-content {
+  padding: 20px 30px;
+}
+.yamm .dropdown.yamm-fw .dropdown-menu {
+  left: 0;
+  right: 0;
+}
+
+.no-padding-left {
+  padding-left: 0px;
+}
+
+.no-padding-right {
+  padding-right: 0px;
+}
+
+.overlay, header .mega-menu-img .overlay-mega-menu, section.banner .banner-overlay, section.services .banner-overlay, section.about-us .about-wrap .overlay-blue {
   position: absolute;
   top: 0;
   left: 0;
@@ -13,11 +184,8 @@ body {
   transition: all .3s;
   cursor: pointer;
 }
-.overlay:hover, section.banner .banner-overlay:hover, section.services .banner-overlay:hover {
-  opacity: 0;
-}
 
-.banner-img, section.banner .banner-img-1, section.banner .banner-img-2, section.services .services-img-1, section.services .services-img-2, section.services .services-img-3, section.services .services-img-4, section.services .services-img-5 {
+.banner-img, header .mega-menu-img, section.banner .banner-img-1, section.banner .banner-img-2, section.services .services-img-1, section.services .services-img-2, section.services .services-img-3, section.services .services-img-4, section.services .services-img-5 {
   height: 300px;
   background-position: center;
   background-size: cover;
@@ -25,7 +193,7 @@ body {
   text-align: center;
   position: relative;
 }
-.banner-img .banner-title, section.banner .banner-img-1 .banner-title, section.banner .banner-img-2 .banner-title, section.services .services-img-1 .banner-title, section.services .services-img-2 .banner-title, section.services .services-img-3 .banner-title, section.services .services-img-4 .banner-title, section.services .services-img-5 .banner-title {
+.banner-img .banner-title, header .mega-menu-img .banner-title, section.banner .banner-img-1 .banner-title, section.banner .banner-img-2 .banner-title, section.services .services-img-1 .banner-title, section.services .services-img-2 .banner-title, section.services .services-img-3 .banner-title, section.services .services-img-4 .banner-title, section.services .services-img-5 .banner-title {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -33,21 +201,128 @@ body {
   letter-spacing: 1px;
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+body {
+  font-family: "Shin Go Light JIS2004", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.ul-unstyle {
+  padding: 0px;
+}
+.ul-unstyle li {
+  list-style: none;
+}
+
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.col-xs-15 {
+  width: 20%;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .col-sm-15 {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-15 {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-15 {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
 header {
   height: auto;
 }
+header nav.navbar {
+  background: transparent;
+  border-bottom: none;
+}
+header .navbar-collapse {
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 0 rgba(0, 0, 0, 0.05);
+  padding: 0px 36px;
+}
 header a.navbar-brand {
-  width: 248px;
-  height: 32px;
+  width: 273px;
+  padding-left: 36px;
 }
 header a.navbar-brand img {
-  width: inherit;
+  width: 100%;
+}
+header .navbar-collapse ul.navbar-nav {
+  padding-right: 36px;
 }
 header .navbar-collapse ul.navbar-nav li {
   border-right: 1px solid #ddd;
+  border-bottom: 5px solid transparent;
+}
+header .navbar-collapse ul.navbar-nav li:hover {
+  border-bottom: 5px solid #0d57a7;
+}
+header .navbar-collapse ul.navbar-nav li ul.dropdown-menu li {
+  border: none;
 }
 header .navbar-collapse ul.navbar-nav li:last-child {
-  border-right: none;
+  border-right-color: transparent;
+}
+header .navbar-collapse ul.navbar-nav .yamm-fw .dropdown-menu {
+  left: 14px;
+  right: 14px;
+}
+header .mega-menu-img {
+  width: 100%;
+  height: 104px;
+  margin-bottom: 12px;
+  background-image: url(../img/img_menu_service_01.jpg);
+}
+header .mega-menu-img .overlay-mega-menu {
+  background: rgba(15, 88, 168, 0.6);
+}
+header .mega-menu-img .overlay-mega-menu:hover {
+  opacity: 0;
+}
+header .mega-menu:nth-child(1) .mega-menu-img {
+  border-bottom: 5px solid #0d57a7;
+}
+header .mega-menu:nth-child(2) .mega-menu-img {
+  border-bottom: 5px solid #5f52a0;
+}
+header .mega-menu:nth-child(3) .mega-menu-img {
+  border-bottom: 5px solid #009a5b;
+}
+header .mega-menu:nth-child(4) .mega-menu-img {
+  border-bottom: 5px solid #f08300;
+}
+header .mega-menu:nth-child(5) .mega-menu-img {
+  border-bottom: 5px solid #e50e81;
 }
 
 section#main section.video-intro {
@@ -57,15 +332,21 @@ section#main section.video-intro video {
   width: 100%;
   height: auto;
 }
-section#main section.video-intro .title-video {
+section#main section.video-intro h3 {
   position: absolute;
+  color: #fff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: pink;
   text-align: center;
 }
 
+section.banner .banner-img:hover .banner-overlay, section.banner header .mega-menu-img:hover .banner-overlay, header section.banner .mega-menu-img:hover .banner-overlay, section.banner .banner-img-1:hover .banner-overlay, section.banner .banner-img-2:hover .banner-overlay, section.banner section.services .services-img-1:hover .banner-overlay, section.services section.banner .services-img-1:hover .banner-overlay, section.banner section.services .services-img-2:hover .banner-overlay, section.services section.banner .services-img-2:hover .banner-overlay, section.banner section.services .services-img-3:hover .banner-overlay, section.services section.banner .services-img-3:hover .banner-overlay, section.banner section.services .services-img-4:hover .banner-overlay, section.services section.banner .services-img-4:hover .banner-overlay, section.banner section.services .services-img-5:hover .banner-overlay, section.services section.banner .services-img-5:hover .banner-overlay {
+  opacity: 0;
+}
+section.banner .banner-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
 section.banner .banner-img-1 {
   background-image: url(../img/img_index_01.jpg);
 }
@@ -74,11 +355,21 @@ section.banner .banner-img-2 {
 }
 
 section.services {
+  margin-top: 50px;
   width: 100%;
+  height: auto;
+  padding: 50px 0px 20px;
   background: #ddd;
 }
 section.services .services-title {
   text-transform: uppercase;
+  margin-bottom: 20px;
+}
+section.services .banner-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+section.services .banner-overlay:hover {
+  opacity: 0;
 }
 section.services .services-img-1 {
   background-image: url(../img/img_index_03.jpg);
@@ -88,10 +379,158 @@ section.services .services-img-2 {
 }
 section.services .services-img-3 {
   background-image: url(../img/img_index_05.jpg);
+  height: 250px;
 }
 section.services .services-img-4 {
   background-image: url(../img/img_index_06.jpg);
+  height: 250px;
 }
 section.services .services-img-5 {
   background-image: url(../img/img_index_07.jpg);
+  height: 250px;
+}
+section.services .services-wrap-box-2 {
+  padding: 20px;
+}
+
+section.about-us {
+  margin-top: 50px;
+}
+section.about-us .wrap-box {
+  position: relative;
+  margin-bottom: 30px;
+}
+section.about-us .about-wrap-left {
+  background-image: url(../img/img_index_08.jpg);
+  transform-origin: left;
+}
+section.about-us .about-wrap-right {
+  background-image: url(../img/img_index_09.jpg);
+  float: right;
+  transform-origin: right;
+  animation-delay: .3s;
+}
+section.about-us .about-wrap {
+  background-size: cover;
+  width: 85%;
+  height: 300px;
+  position: relative;
+  opacity: 0;
+}
+section.about-us .about-wrap.active {
+  animation: about-wrap .8s ease-in-out;
+  opacity: 1;
+}
+@keyframes about-wrap {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+section.about-us .about-wrap h2.title-right {
+  right: 20px;
+  position: absolute;
+}
+section.about-us .about-wrap h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 300px;
+  padding-left: 20px;
+  z-index: 1;
+  position: relative;
+  letter-spacing: 2px;
+}
+section.about-us .about-wrap .overlay-blue {
+  background: rgba(15, 88, 168, 0.6);
+  z-index: 0;
+}
+section.about-us .feature-link-right {
+  right: auto !important;
+  left: 15px;
+}
+section.about-us .feature-link {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+}
+section.about-us .feature-link .feature-link-item {
+  padding: 30px 90px;
+  font-size: 1.2em;
+  display: block;
+}
+section.about-us .feature-link h3.feature-link-item {
+  background: #ddd;
+}
+section.about-us .feature-link a.feature-link-item {
+  background: #0d57a7;
+  color: #fff;
+  transition: all .3s;
+}
+section.about-us .feature-link a.feature-link-item:hover {
+  text-decoration: none;
+  background: #333;
+}
+
+section.news .news-schedule {
+  border: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0px;
+}
+section.news .news-schedule:nth-child(2) {
+  border: none;
+}
+section.news .detail-schedule a {
+  color: #777;
+  font-size: 1.3em;
+  display: block;
+}
+section.news .day-schedule h4 {
+  color: #0d57a7;
+}
+
+footer .footer-utility {
+  background: #535353;
+  width: 100%;
+  padding: 20px;
+  font-size: 14px;
+}
+footer .footer-utility .footer-info img {
+  width: 260px;
+  height: auto;
+}
+footer .footer-utility .footer-info ul {
+  margin: 20px 0px 0px;
+}
+footer .footer-utility .footer-info ul li {
+  display: inline-table;
+}
+footer .footer-utility .footer-info ul li a {
+  color: #fff;
+  border-right: 1px solid #fff;
+  padding-right: 10px;
+}
+footer .footer-utility .language-switcher {
+  color: #fff;
+  float: right;
+}
+footer .footer-utility .language-switcher select {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+footer .footer-copyright {
+  background: #313131;
+  color: #fff;
+  padding: 15px;
+}
+footer .footer-copyright h4 {
+  font-size: 12px;
 }

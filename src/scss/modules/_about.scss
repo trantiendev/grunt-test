@@ -1,0 +1,101 @@
+section.about-us{
+  margin-top: 50px;
+
+
+  .wrap-box{
+    position: relative;
+    margin-bottom: 30px;
+
+  }
+  .about-wrap-left{
+    background-image: url(../img/img_index_08.jpg);
+    transform-origin: left;
+  }
+
+  .about-wrap-right{
+    background-image: url(../img/img_index_09.jpg);
+    float: right;
+    transform-origin: right;
+    animation-delay: .3s;
+
+  }
+
+  .about-wrap{
+    background-size: cover;
+    width: 85%;
+    height: 300px;
+    position: relative;
+    opacity: 0;
+    &.active{
+      animation: about-wrap .8s ease-in-out;
+
+      @keyframes about-wrap{
+        0%{
+          transform: scaleX(0);
+          opacity: 0;
+
+        }
+        100%{
+          transform: scaleX(1);
+          opacity: 1;
+        }
+      }
+      opacity: 1;
+    }
+
+    h2.title-right{
+      right: 20px;
+      position: absolute;
+    }
+
+    h2{
+      font-family: "Roboto Condensed", sans-serif;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 300px;
+      padding-left: 20px;
+      z-index: 1;
+      position: relative;
+      letter-spacing: 2px;
+    }
+    .overlay-blue{
+      background: rgba(15, 88, 168, 0.6);
+      z-index: 0;
+      @extend .overlay;
+    }
+  }
+
+  .feature-link-right{
+    right: auto !important;
+    left: 15px;
+  }
+
+  .feature-link{
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+
+
+    .feature-link-item{
+      padding: 30px 90px;
+      font-size: 1.2em;
+      display: block;
+    }
+
+    h3.feature-link-item{
+      background: #ddd;
+    }
+    a.feature-link-item{
+      background: #0d57a7;
+      color: #fff;
+      transition: all .3s;
+      &:hover{
+        text-decoration: none;
+        background: #333;
+      }
+    }
+
+  }
+
+
+}
