@@ -1,51 +1,71 @@
-footer{
-
-  .footer-utility{
+footer {
+  .footer-utility {
     background: #535353;
     width: 100%;
     padding: 20px;
     font-size: 14px;
 
-    .footer-info{
-      img{
+    .footer-info {
+      img {
         width: 260px;
         height: auto;
       }
 
-      ul{
-        margin: 20px 0px 0px;
-        li{
+      .footer-link {
+        margin: 20px 0 0;
+        li {
           display: inline-table;
-          a{
-            color: #fff;
-            border-right: 1px solid #fff;
+          a {
+            color: $white-color;
+            border-right: 1px solid $white-color;
             padding-right: 10px;
-
           }
         }
+        li:last-child a {
+          border-right: 0;
+        }
       }
-
     }
 
-    .language-switcher{
-      color: #fff;
+    .language-switcher {
+      color: $white-color;
       float: right;
-      select{
+      @include respond-to-mobile() {
+        float: left;
+        margin-top: 24px;
+      }
+
+      .language-switcher-box {
         background: transparent;
-        border: none;
-        // appearance: none;
+        border: 0;
+        appearance: none;
         outline: none;
-        // padding: 10px;
+        padding: 4px 20px 4px 8px;
+        background-image: url(/img/ico_arrow-down_white.png);
+        background-repeat: no-repeat;
+        background-size: 10px auto;
+        background-position: right center;
+      }
+
+      .language-switcher-label {
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          background: lightgray;
+          margin-left: 10px;
+        }
       }
     }
   }
 
 
-  .footer-copyright{
+  .footer-copyright {
     background: #313131;
-    color: #fff;
+    color: $white-color;
     padding: 15px;
-    h4{
+    h4 {
       font-size: 12px;
     }
   }

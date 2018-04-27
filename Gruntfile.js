@@ -44,7 +44,9 @@
             {
               src: [
                 '<%= srcPath %>/js/vendor/jquery.min.js',
-                '<%= srcPath %>/js/vendor/jquery.nice-select.min.js'
+                '<%= srcPath %>/js/vendor/jquery.nice-select.min.js',
+                '<%= srcPath %>/js/vendor/scrollreveal.min.js',
+
               ],
               dest: '<%= destPath %>/js/vendor.js'
             },

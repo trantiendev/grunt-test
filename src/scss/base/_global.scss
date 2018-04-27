@@ -1,22 +1,114 @@
-p, h1, h2, h3, h4, h5, h6{
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
-body{
-  font-family: "Shin Go Light JIS2004", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+h1,
+h2,
+h4 {
+  font-family: $font-family-sans-serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 1.33;
+  letter-spacing: .12em;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.5;
+  letter-spacing: .04em;
+  margin-bottom: 32px;
+}
+
+h3 {
+  font-family: $font-family-bold;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: .16em;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: .04em;
+  margin-bottom: 16px;
 }
 
 
-.text-uppercase{
+
+.text-uppercase {
   text-transform: uppercase;
 }
 
-.ul-unstyle{
-  padding: 0px;
-  li{
+.ul-unstyle {
+  padding: 0;
+  li {
     list-style: none;
   }
 }
+
+.no-padding-left {
+  padding-left: 0;
+  @include respond-to-mobile() {
+    padding-left: 15px;
+  }
+}
+.no-padding-right {
+  padding-right: 0;
+  @include respond-to-mobile() {
+    padding-right: 15px;
+  }
+}
+
+.pt-40 {
+  padding-top: 40px;
+}
+
+.pb-40 {
+  padding-bottom: 40px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+//overlay
+%overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+%banner-img {
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  position: relative;
+
+  .banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 1px;
+  }
+}
+
 
 //5-columns
 
@@ -24,42 +116,43 @@ body{
 .col-sm-15,
 .col-md-15,
 .col-lg-15 {
-    position: relative;
-    min-height: 1px;
-    padding-right: 10px;
-    padding-left: 10px;
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
+
 .col-xs-15 {
-    width: 20%;
-    float: left;
+  width: 20%;
+  float: left;
 }
 
 @media (min-width: 768px) {
-.col-sm-15 {
-        width: 20%;
-        float: left;
-    }
+  .col-sm-15 {
+    width: 20%;
+    float: left;
+  }
 }
 
 @media (min-width: 992px) {
-    .col-md-15 {
-        width: 20%;
-        float: left;
-    }
+  .col-md-15 {
+    width: 20%;
+    float: left;
+  }
 }
 
 @media (min-width: 1200px) {
-    .col-lg-15 {
-        width: 20%;
-        float: left;
-    }
+  .col-lg-15 {
+    width: 20%;
+    float: left;
+  }
 }
 
 //Resize-container
 
-@media(min-width: 1200px){
-  .container{
-    max-width: 1200px;
+@media(min-width: 1120px) {
+  .container {
+    max-width: 1120px;
   }
 }
