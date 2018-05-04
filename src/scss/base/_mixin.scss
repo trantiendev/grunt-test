@@ -13,3 +13,9 @@
     @content
   }
 }
+
+@mixin respond-to-not-mobile() {
+  @media (min-width: $screen-mobile) {
+    @content
+  }
+}

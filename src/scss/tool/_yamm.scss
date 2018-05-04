@@ -1,17 +1,4 @@
-/*!
- * Yamm!3 - Yet another megamenu for Bootstrap 3
- * http://geedmo.github.com/yamm3
- *
- * @geedmo - Licensed under the MIT license
- */
-
-//-----------------------------
-//  Yamm Styles
-//-----------------------------
-
-.yamm {
-
-  // reset positions
+.mega {
   .nav,
   .collapse,
   .dropup,
@@ -19,25 +6,15 @@
     position: static;
   }
 
-  // propagate menu position under container for fw navbars
   .container {
     position: relative;
   }
 
-  // by default aligns menu to left
   .dropdown-menu {
     left: auto;
   }
 
-  // Content with padding
-  .yamm-content {
-    padding: 20px 30px;
+  .dropdown.mega-fw .dropdown-menu {
+    left: 14px;
   }
-
-  // Fullwidth menu
-  .dropdown.yamm-fw .dropdown-menu {
-    left: 0;
-    right: 0;
-  }
-
 }

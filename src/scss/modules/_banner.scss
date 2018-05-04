@@ -1,17 +1,15 @@
 .banner {
-  @include respond-to-mobile() {
-    .banner-img:last-child {
-      margin-top: 15px;
-    }
-
-    .banner-img {
-      height: 188px;
-    }
-  }
-
   .banner-img {
     @extend .overlay;
     @extend %banner-img;
+
+    @include respond-to-mobile() {
+      height: 188px;
+
+      &:last-child {
+        margin-top: 15px;
+      }
+    }
   }
 
   .banner-title {

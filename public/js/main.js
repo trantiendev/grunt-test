@@ -49,7 +49,7 @@ function scrollreveal() {
     origin: 'bottom',
     distance: '50px'
   });
-  sr.reveal('.services-img-1', {
+  sr.reveal('.services-img', {
     duration: 1e3,
     origin: 'bottom',
     distance: '50px'
@@ -57,7 +57,7 @@ function scrollreveal() {
 }
 
 function yamm() {
-  $(document).on('click', '.yamm .dropdown-menu', function(e) {
+  $(document).on('click', '.mega .dropdown-menu', function(e) {
     e.stopPropagation();
   });
 }

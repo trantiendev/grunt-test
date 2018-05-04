@@ -4,16 +4,6 @@
   padding: 50px 0 20px;
   background-color: $lightest-gray-color;
 
-  @include respond-to-mobile() {
-    .services-img:last-child {
-      margin-top: 15px;
-    }
-
-    .services-img {
-      height: 188px;
-    }
-  }
-
   .services-title {
     margin-bottom: 20px;
   }
@@ -25,21 +15,21 @@
   .services-img {
     @extend %banner-img;
     @extend .overlay;
-  }
-
-  .services-img-3,
-  .services-img-4,
-  .services-img-5 {
-    height: 250px;
-  }
-
-  .services-wrap-box-2 {
-    padding: 20px;
 
     @include respond-to-mobile() {
-      .services-img-sm {
-        height: 144px;
+      height: 188px;
+
+      &:last-child {
+        margin-top: 15px;
       }
+    }
+  }
+
+  .services-img-sm {
+    height: 250px;
+
+    @include respond-to-mobile() {
+      height: 144px;
     }
   }
 }

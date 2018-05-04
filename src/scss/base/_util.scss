@@ -1,3 +1,12 @@
+.no-p {
+  padding: 0;
+
+  @include respond-to-mobile() {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
 .no-pl {
   padding-left: 0;
 
@@ -11,6 +20,14 @@
   @include respond-to-mobile() {
     padding-right: 15px;
   }
+}
+
+.pt-24 {
+  padding-top: 24px;
+}
+
+.pb-24 {
+  padding-bottom: 24px;
 }
 
 .pt-40 {
