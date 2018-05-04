@@ -15,18 +15,21 @@ h4 {
   font-weight: 500;
 }
 
+h1,
+h2 {
+  margin-bottom: 32px;
+}
+
 h1 {
   font-size: 36px;
   line-height: 1.33;
   letter-spacing: .12em;
-  margin-bottom: 32px;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: $font-size-xl;
   line-height: 1.5;
   letter-spacing: .04em;
-  margin-bottom: 32px;
 }
 
 h3 {
@@ -37,13 +40,11 @@ h3 {
 }
 
 h4 {
-  font-size: 16px;
+  font-size: $font-size-base;
   line-height: 1.5;
   letter-spacing: .04em;
   margin-bottom: 16px;
 }
-
-
 
 .text-uppercase {
   text-transform: uppercase;
@@ -51,52 +52,55 @@ h4 {
 
 .ul-unstyle {
   padding: 0;
+
   li {
     list-style: none;
   }
 }
 
-.no-padding-left {
-  padding-left: 0;
-  @include respond-to-mobile() {
-    padding-left: 15px;
+.overlay {
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .3s ease;
   }
-}
-.no-padding-right {
-  padding-right: 0;
-  @include respond-to-mobile() {
-    padding-right: 15px;
+
+  &:hover:after {
+    background-color: transparent;
   }
-}
 
-.pt-40 {
-  padding-top: 40px;
-}
+  &-lighter-blue {
+    &:after {
+      background-color: rgba($lighter-blue-color, .4);
+    }
+  }
 
-.pb-40 {
-  padding-bottom: 40px;
-}
+  &-blue {
+    &:after {
+      background-color: rgba($blue-color, .6);
+    }
+  }
 
-.mt-15 {
-  margin-top: 15px;
-}
+  &-darker-blue {
+    &:hover:after {
+      background-color: rgba($blue-color, .6) !important;
+    }
 
-//overlay
-%overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: all .3s;
-  cursor: pointer;
+    &:after {
+      background-color: rgba($blue-color, .6);
+    }
+  }
 }
 
 %banner-img {
   height: 300px;
   background-position: center;
   background-size: cover;
-  color: #fff;
+  color: $white-color;
   text-align: center;
   position: relative;
 
@@ -106,53 +110,5 @@ h4 {
     left: 50%;
     transform: translate(-50%, -50%);
     letter-spacing: 1px;
-  }
-}
-
-
-//5-columns
-
-.col-xs-15,
-.col-sm-15,
-.col-md-15,
-.col-lg-15 {
-  position: relative;
-  min-height: 1px;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-
-.col-xs-15 {
-  width: 20%;
-  float: left;
-}
-
-@media (min-width: 768px) {
-  .col-sm-15 {
-    width: 20%;
-    float: left;
-  }
-}
-
-@media (min-width: 992px) {
-  .col-md-15 {
-    width: 20%;
-    float: left;
-  }
-}
-
-@media (min-width: 1200px) {
-  .col-lg-15 {
-    width: 20%;
-    float: left;
-  }
-}
-
-//Resize-container
-
-@media(min-width: 1120px) {
-  .container {
-    max-width: 1120px;
   }
 }

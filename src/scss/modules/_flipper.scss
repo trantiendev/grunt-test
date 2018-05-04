@@ -1,0 +1,11 @@
+.flipper {
+  .container-flipper {
+    background-image: url(/strength/img/img_index_05.jpg);
+    @include background-as-img();
+    width: 100%;
+    // height: 90vh;
+  }
+  .card {
+    border: 1px solid $gray-color;
+  }
+}

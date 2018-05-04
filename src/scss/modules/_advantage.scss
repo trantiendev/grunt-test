@@ -1,0 +1,46 @@
+.advantage {
+  .feature-strength {
+    width: 80%;
+    height: 75vh;
+    float: right;
+
+    .feature-img {
+      width: 100%;
+      height: 100%;
+      @include background-as-img();
+    }
+  }
+
+  .feature-right {
+    float: left;
+
+    .feature-content {
+      left: auto;
+      right: 14px;
+    }
+  }
+
+  .feature-content {
+    background-color: rgba($white-color, .9);
+    width: 48.572%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 14px;
+    padding: 64px 64px 0 36px;
+
+    h4 {
+      color: $blue-color;
+      border-bottom: 1px solid $blue-color;
+    }
+
+    .feature-title {
+      color: $blue-color;
+      letter-spacing: 0;
+    }
+
+    p {
+      letter-spacing: 1.6px;
+    }
+  }
+}

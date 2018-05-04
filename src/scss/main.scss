@@ -1,23 +1,23 @@
 @charset 'UTF-8';
 
-//TOOL
+//Tool
 @import 'tool/yamm';
 
-
-
-//BASEFILEs
+//Base file
 @import 'base/vars';
 @import 'base/mixin';
 @import 'base/global';
+@import 'base/grid';
+@import 'base/util';
 
-
-
-//modules
+//Modules
 @import 'modules/header';
 @import 'modules/videos';
 @import 'modules/banner';
 @import 'modules/services';
 @import 'modules/about';
 @import 'modules/news';
+@import 'modules/advantage';
+@import 'modules/flipper';
 @import 'modules/footer';
 @import 'modules/scroll';

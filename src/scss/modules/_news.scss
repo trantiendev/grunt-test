@@ -1,13 +1,13 @@
-section.news {
+.news {
   .news-title {
     margin-bottom: 30px;
   }
 
   .news-schedule {
-    border: 1px solid #ccc;
+    border: 1px solid $lightest-gray-color;
     border-left: 0;
     border-right: 0;
-    padding: 20px 0px;
+    padding: 20px 0;
   }
 
   .news-schedule:nth-child(2) {
@@ -16,7 +16,7 @@ section.news {
 
   .detail-schedule {
     a {
-      color: #777;
+      color: $gray-color;
       font-size: 1.3em;
       display: block;
     }
@@ -24,8 +24,7 @@ section.news {
 
   .day-schedule {
     h4 {
-      color: #0d57a7;
+      color: $blue-color;
     }
   }
-
 }

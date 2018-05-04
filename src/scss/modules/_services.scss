@@ -1,32 +1,30 @@
-section.services {
+.services {
   width: 100%;
   height: auto;
   padding: 50px 0 20px;
-  background: #ddd;
-
-  .services-title {
-    margin-bottom: 20px;
-  }
-
-  .banner-overlay {
-    @extend %overlay;
-    background: rgba(black, .4);
-  }
-
-  .services-img {
-    @extend %banner-img;
-    &:hover .banner-overlay {
-      opacity: 0;
-    }
-  }
+  background-color: $lightest-gray-color;
 
   @include respond-to-mobile() {
     .services-img:last-child {
       margin-top: 15px;
     }
+
     .services-img {
       height: 188px;
     }
+  }
+
+  .services-title {
+    margin-bottom: 20px;
+  }
+
+  .banner-title {
+    z-index: $zindex-overlay;
+  }
+
+  .services-img {
+    @extend %banner-img;
+    @extend .overlay;
   }
 
   .services-img-3,
@@ -35,14 +33,13 @@ section.services {
     height: 250px;
   }
 
-  @include respond-to-mobile() {
-    .services-img-sm{
-      height: 144px;
-    }
-  }
-
   .services-wrap-box-2 {
     padding: 20px;
-  }
 
+    @include respond-to-mobile() {
+      .services-img-sm {
+        height: 144px;
+      }
+    }
+  }
 }

@@ -2,16 +2,27 @@ $screen-pc: 1120px !default;
 $screen-mobile: 768px !default;
 
 $blue-color: #0d57a7;
+$lighter-blue-color: #0f182e;
 $violet-color: #5f52a0;
 $green-color: #009a5b;
 $orange-color: #f08300;
 $pink-color: #e50e81;
+$lightest-gray-color: #dcdcdc;
+$gray-color: #535353;
+$darker-black-color: #313131;
 
 $black-color: #333;
 $white-color: #fff;
 
 $group-border-color: $blue-color, $violet-color, $green-color, $orange-color, $pink-color;
 
-
 $font-family-sans-serif: 'UD Shin Go Light', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 $font-family-bold: 'UD Shin Go Conde80 L', 'Shin Go Light JIS2004', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+
+$zindex-overlay: 2;
+
+$font-size-xl: 32px;
+$font-size-lg: 20px;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-xs: 12px;

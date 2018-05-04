@@ -5,12 +5,19 @@
   yamm();
   scrollreveal();
   btn_scrollTop();
-
+  flip();
 })();
 
 $(window).scroll(function() {
   sec_animate();
 });
+
+function flip() {
+  $(".card").flip({
+  axis: 'y',
+  trigger: 'hover'
+});
+}
 
 function btn_scrollTop() {
   if ($('.back-to-top').length) {
@@ -27,6 +34,7 @@ function btn_scrollTop() {
     $(window).on('scroll', function () {
         backToTop();
     });
+
     $('.back-to-top').on('click', function (e) {
         e.preventDefault();
         $('html,body').animate({
@@ -40,13 +48,13 @@ function btn_scrollTop() {
 function scrollreveal() {
   window.sr = ScrollReveal();
 
-  sr.reveal('.banner-img, .services-img-1', {
+  sr.reveal('.banner-img', {
     duration: 1000,
     origin:'bottom',
     distance:'50px'
   });
 
-  sr.reveal('.services-img-1, .services-img-2, .services-img-3, .services-img-4, .services-img-5, .services-img-6', {
+  sr.reveal('.services-img-1', {
     duration: 1000,
     origin:'bottom',
     distance:'50px'
@@ -80,7 +88,6 @@ function sec_animate(){
 };
 
 function title_video() {
-
   $(".title-video > h3:gt(0)").hide();
 
   setInterval(function() {

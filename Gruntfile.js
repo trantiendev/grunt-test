@@ -46,6 +46,7 @@
                 '<%= srcPath %>/js/vendor/jquery.min.js',
                 '<%= srcPath %>/js/vendor/jquery.nice-select.min.js',
                 '<%= srcPath %>/js/vendor/scrollreveal.min.js',
+                '<%= srcPath %>/js/vendor/jquery.flip.min.js',
 
               ],
               dest: '<%= destPath %>/js/vendor.js'

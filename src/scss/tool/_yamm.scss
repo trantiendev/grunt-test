@@ -12,7 +12,10 @@
 .yamm {
 
   // reset positions
-  .nav, .collapse, .dropup, .dropdown {
+  .nav,
+  .collapse,
+  .dropup,
+  .dropdown {
     position: static;
   }
 
@@ -33,7 +36,8 @@
 
   // Fullwidth menu
   .dropdown.yamm-fw .dropdown-menu {
-    left: 0; right: 0;
+    left: 0;
+    right: 0;
   }
 
 }

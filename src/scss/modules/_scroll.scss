@@ -10,12 +10,13 @@
   background-image: url('/img/ico_arrow-up_blue.png');
   background-size: 26px 15px;
   background-position: center center;
-  box-shadow: 3px 6px rgba(black, .1), 0 5px 6px rgba(black, .2);
+  box-shadow: 3px 6px rgba($black-color, .1), 0 5px 6px rgba($black-color, .2);
   cursor: pointer;
   border: 0;
   border-radius: 50%;
-  transition: opacity 0.2s ease-out;
+  transition: opacity .2s ease-out;
   display: none;
+
   &.show {
     display: block;
   }

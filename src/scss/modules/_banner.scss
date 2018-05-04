@@ -1,31 +1,20 @@
-section.banner {
-  .banner-img {
-    &:hover .banner-overlay {
-      opacity: 0;
-    }
-  }
+.banner {
   @include respond-to-mobile() {
     .banner-img:last-child {
       margin-top: 15px;
     }
+
     .banner-img {
       height: 188px;
     }
   }
 
-  .banner-overlay {
-    @extend %overlay;
-    background: rgba(#000, .4);
-  }
-
-
-  .banner-img-1 {
-    background-image: url(../img/img_index_01.jpg);
+  .banner-img {
+    @extend .overlay;
     @extend %banner-img;
   }
 
-  .banner-img-2 {
-    background-image: url(../img/img_index_02.jpg);
-    @extend %banner-img;
+  .banner-title {
+    z-index: $zindex-overlay;
   }
 }
